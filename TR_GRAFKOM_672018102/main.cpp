@@ -1,165 +1,219 @@
-
 #include <windows.h>
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
-#include <GL/glut.h>
-#endif
+#include <gl/glut.h>
 
-#include <stdlib.h>
+void init(void);
+void tampil(void);
+void keyboard(unsigned char, int, int);
+void ukuran(int, int);
+void mouse (int button, int state, int x, int y);
+void mouseMotion(int x, int y);
+int dy;
+void test();
 
-static int slices = 16;
-static int stacks = 16;
+float xrot = 0.0f;
+float yrot = 0.0f;
+float xdiff = 0.0f;
+float ydiff = 0.0f;
+bool mouseDown = false;
+int is_depth;
 
-/* GLUT callback Handlers */
+int main (int argc, char **argv){
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(800, 600);
+    glutInitWindowPosition(250, 80);
+    glutCreateWindow("Hermawan Nugroho - 672018102");
+    init();
+    glutDisplayFunc(tampil);
+    glutKeyboardFunc(keyboard);
+    glutReshapeFunc(ukuran);
+    glutMouseFunc(mouse);
+    glutMotionFunc(mouseMotion);
+    glutMainLoop();
+    return 0;
+}
 
-static void resize(int width, int height)
-{
-    const float ar = (float) width / (float) height;
+void init(void){
+    glMatrixMode(GL_PROJECTION);
+    glEnable(GL_DEPTH_TEST);
+    //glEnable(GL_LIGHTING);
+    //glEnable(GL_COLOR_MATERIAL);
+    //glEnable(GL_LIGHT0);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+    is_depth=1;
+    glMatrixMode(GL_MODELVIEW);
+}
 
-    glViewport(0, 0, width, height);
+
+void test(){
+}
+
+
+void tampil (){
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLoadIdentity();
+    gluLookAt(0.0f,0.0f,3.0f,0.0f,0.0f,0.0f,0.0f,1.0f,0.0f);
+    glRotatef(xrot, 1.0f, 0.0f, 0.0f);
+    glRotatef(yrot, 0.0f, 1.0f, 0.0f);
+
+    //=================================bawah=====================
+    glBegin(GL_POLYGON);
+    glColor3f(0.0,1.0,0.0);
+    glVertex3f(-70.0,-30.0,50.0);
+    glVertex3f(70.0,-30.0,50.0);
+    glVertex3f(70.0,-30.0,-80.0);
+    glVertex3f(-70.0,-30.0,-80.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1.0, 0, 0);//dpn
+    glVertex3f(-55.0, -30.0, -30.0);
+    glVertex3f(-25.0, -30.0, -40.0);
+    glVertex3f(-25.0, 20.0, -40.0);
+    glVertex3f(-55.0, 20.0, -30.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0,0.0,1.0);//dpn aliyen
+    glVertex3f(-25.0, -30.0, -40.0);
+    glVertex3f(-20.0, -30.0, -50.0);
+    glVertex3f(-21.0, 20.0, -46.0);
+    glVertex3f(-25.0, 20.0, -40.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);//blkng
+    glVertex3f(-60.0, -30.0, -60.0);
+    glVertex3f(-25.0, -30.0, -70.0);
+    glVertex3f(-25.0, 100.0, -70.0);
+    glVertex3f(-60.0, 100.0, -60.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);//skiri
+    glVertex3f(-55.0, -30.0, -30.0);
+    glVertex3f(-60.0, -30.0, -60.0);
+    glVertex3f(-60.0, 100.0, -60.0);
+    glVertex3f(-55.0, 100.0, -30.0);
+    glEnd();
+
+    glColor3f(0.0,1.0,1.0);
+    glBegin(GL_POLYGON);//kanan
+    glVertex3f(-20.0, -30.0, -50.0);
+    glVertex3f(-25.0, 100.0, -40.0);
+    glVertex3f(-25.0, 100.0, -70.0);
+    glVertex3f(-25.0, -30.0, -70.0);
+    glEnd();
+
+    glColor3f(1.0,0,1.0);
+    glBegin(GL_POLYGON);
+    glVertex3f(-21.0, 20.0, -46.0);
+    glVertex3f(-25.0, 20.0, -40.0);
+    glVertex3f(-30.0, 100.0, -35.0);
+    glVertex3f(-25.0, 100.0, -40.0);
+    glEnd();
+
+    glColor3f(1.0,1.0,0.0);
+    glBegin(GL_POLYGON);
+    glVertex3f(-55.0, 20.0, -30.0);
+    glVertex3f(-25.0, 20.0, -40.0);
+    glVertex3f(-30.0, 100.0, -35.0);
+    glVertex3f(-55.0, 100.0, -30.0);
+    glEnd();
+    glutSwapBuffers();
+
+}
+
+void keyboard(unsigned char key, int x, int y){
+    switch (key){
+    case 'w':
+    case 'W':
+        dy++;
+        break;
+
+    case 'd':
+    case 'D':
+        glTranslatef(-3.0, 0.0, 0.0);
+        break;
+
+    case 's':
+    case 'S':
+        dy--;
+        break;
+
+    case 'a':
+    case 'A':
+        glTranslatef(3.0, 0.0, 0.0);
+        break;
+
+    case '7':
+        glTranslatef(0.0, 3.0, 0.0);
+        break;
+
+    case '9':
+        glTranslatef(0.0, -3.0, 0.0);
+        break;
+
+    case '2':
+        glRotatef(2.0, 1.0, 0.0, 0.0);
+        break;
+
+    case '8':
+        glRotatef(-2.0, 1.0, 0.0, 0.0);
+        break;
+
+    case '6':
+        glRotatef(2.0, 0.0, 1.0, 0.0);
+        break;
+
+    case '4':
+        glRotatef(-2.0, 0.0, 1.0, 0.0);
+        break;
+
+    case '1':
+        glRotatef(2.0, 0.0, 0.0, 1.0);
+        break;
+
+    case '3':
+        glRotatef(-2.0, 0.0, 0.0, 1.0);
+        break;
+
+    case '5':
+        if (is_depth){
+            is_depth = 0;
+            glDisable(GL_DEPTH_TEST);
+        } else {
+            is_depth = 1;
+            glEnable(GL_DEPTH_TEST);
+        }
+    }
+    tampil();
+}
+
+void mouse(int button, int state, int x, int y){
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
+        mouseDown = true;
+        xdiff = x - yrot;
+        ydiff = -y + xrot;
+    }
+    else
+        mouseDown = false;
+}
+
+void mouseMotion(int x, int y){
+    if(mouseDown){
+        yrot = x - xdiff;
+        xrot = y + ydiff;
+
+        glutPostRedisplay();
+    }
+}
+
+void ukuran(int lebar, int tinggi){
+    if (tinggi == 0) tinggi = 1;
+    glClearColor(1.0, 1.0, 1.0, 1.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glFrustum(-ar, ar, -1.0, 1.0, 2.0, 100.0);
-
+    gluPerspective(70.0, lebar / tinggi, 5.0, 500.0);
+    glTranslatef(0.0, -5.0, -150.0);
     glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity() ;
-}
-
-static void display(void)
-{
-    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
-    const double a = t*90.0;
-
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3d(1,0,0);
-
-    glPushMatrix();
-        glTranslated(-2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidSphere(1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(0,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidCone(1,1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(-2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireSphere(1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(0,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireCone(1,1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
-
-    glutSwapBuffers();
-}
-
-
-static void key(unsigned char key, int x, int y)
-{
-    switch (key)
-    {
-        case 27 :
-        case 'q':
-            exit(0);
-            break;
-
-        case '+':
-            slices++;
-            stacks++;
-            break;
-
-        case '-':
-            if (slices>3 && stacks>3)
-            {
-                slices--;
-                stacks--;
-            }
-            break;
-    }
-
-    glutPostRedisplay();
-}
-
-static void idle(void)
-{
-    glutPostRedisplay();
-}
-
-const GLfloat light_ambient[]  = { 0.0f, 0.0f, 0.0f, 1.0f };
-const GLfloat light_diffuse[]  = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat light_position[] = { 2.0f, 5.0f, 5.0f, 0.0f };
-
-const GLfloat mat_ambient[]    = { 0.7f, 0.7f, 0.7f, 1.0f };
-const GLfloat mat_diffuse[]    = { 0.8f, 0.8f, 0.8f, 1.0f };
-const GLfloat mat_specular[]   = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat high_shininess[] = { 100.0f };
-
-/* Program entry point */
-
-int main(int argc, char *argv[])
-{
-    glutInit(&argc, argv);
-    glutInitWindowSize(640,480);
-    glutInitWindowPosition(10,10);
-    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
-
-    glutCreateWindow("GLUT Shapes");
-
-    glutReshapeFunc(resize);
-    glutDisplayFunc(display);
-    glutKeyboardFunc(key);
-    glutIdleFunc(idle);
-
-    glClearColor(1,1,1,1);
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_BACK);
-
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS);
-
-    glEnable(GL_LIGHT0);
-    glEnable(GL_NORMALIZE);
-    glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHTING);
-
-    glLightfv(GL_LIGHT0, GL_AMBIENT,  light_ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE,  light_diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
-    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-
-    glMaterialfv(GL_FRONT, GL_AMBIENT,   mat_ambient);
-    glMaterialfv(GL_FRONT, GL_DIFFUSE,   mat_diffuse);
-    glMaterialfv(GL_FRONT, GL_SPECULAR,  mat_specular);
-    glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess);
-
-    glutMainLoop();
-
-    return EXIT_SUCCESS;
 }
