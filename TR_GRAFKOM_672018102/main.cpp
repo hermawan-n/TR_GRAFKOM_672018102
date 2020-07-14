@@ -46,7 +46,88 @@ void init(void){
 }
 
 
-void test(){
+void gedungkiri(void){
+
+    glBegin(GL_POLYGON);
+    glColor3f(1.0, 0, 0);//dpn
+    glVertex3f(-55.0, -30.0, -30.0);
+    glVertex3f(-28.0, -30.0, -40.0);
+    glVertex3f(-25.0, 20.0, -40.0);
+    glVertex3f(-55.0, 20.0, -30.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0,0.0,1.0);//dpn aliyen
+    glVertex3f(-28.0, -30.0, -40.0);
+    glVertex3f(-20.0, -30.0, -50.0);
+    glVertex3f(-20.0, 20.0, -46.0);
+    glVertex3f(-25.0, 20.0, -40.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);//blkng
+    glColor3f(0.0,0.5,1.0);
+    glVertex3f(-60.0, -30.0, -60.0);
+    glVertex3f(-25.0, -30.0, -70.0);
+    glVertex3f(-25.0, 80.0, -70.0);
+    glVertex3f(-60.0, 80.0, -60.0);
+    glEnd();
+    glBegin(GL_POLYGON);//blkng
+    glColor3f(0.0,1.5,1.0);
+    glVertex3f(-60.0, 80.0, -60.0);
+    glVertex3f(-26.0, 80.0, -69.71);
+    glVertex3f(-30.0, 100.0, -68.5);
+    glVertex3f(-60.0, 100.0, -60.0);
+    glEnd();
+
+
+    glBegin(GL_POLYGON);//skiri
+    glColor3f(0.0,0.0,1.0);
+    glVertex3f(-55.0, -30.0, -30.0);
+    glVertex3f(-60.0, -30.0, -60.0);
+    glVertex3f(-60.0, 100.0, -60.0);
+    glVertex3f(-55.0, 100.0, -30.0);
+    glEnd();
+
+
+
+    glBegin(GL_POLYGON);//kanan
+    glColor3f(0.0,1.0,1.0);
+    glVertex3f(-20.0, -30.0, -50.0);
+    glVertex3f(-20.0, 20.0, -46.0);
+    glVertex3f(-25.0, 20.0, -70.0);
+    glVertex3f(-25.0, -30.0, -70.0);
+    glEnd();
+    glBegin(GL_POLYGON);//kanan
+    glColor3f(0.0,1.0,1.0);
+    glVertex3f(-20.0, 20.0, -46.0);
+    glVertex3f(-20, 80.0, -48.0);
+    glVertex3f(-25.0, 80.0, -70.0);
+    glVertex3f(-25.0, 20.0, -70.0);
+    glEnd();
+    glBegin(GL_POLYGON);//kanan
+    glColor3f(0.5,0.5,1.0);
+    glVertex3f(-20, 80.0, -48.0);
+    glVertex3f(-20, 100.0, -49.0);
+    glVertex3f(-24.0, 100.0, -65.0);
+    glVertex3f(-24.8, 80.0, -68.5);
+    glEnd();
+
+
+    glColor3f(1.0,0,1.0);
+    glBegin(GL_POLYGON);
+    glVertex3f(-20.0, 20.0, -46.0);
+    glVertex3f(-25.0, 20.0, -40.0);
+    glVertex3f(-30.0, 100.0, -35.0);
+    glVertex3f(-20.0, 100.0, -49.0);
+    glEnd();
+
+    glColor3f(1.0,1.0,0.0);
+    glBegin(GL_POLYGON);
+    glVertex3f(-55.0, 20.0, -30.0);
+    glVertex3f(-25.0, 20.0, -40.0);
+    glVertex3f(-30.0, 100.0, -35.0);
+    glVertex3f(-55.0, 100.0, -30.0);
+    glEnd();
 }
 
 
@@ -65,60 +146,8 @@ void tampil (){
     glVertex3f(70.0,-30.0,-80.0);
     glVertex3f(-70.0,-30.0,-80.0);
     glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3f(1.0, 0, 0);//dpn
-    glVertex3f(-55.0, -30.0, -30.0);
-    glVertex3f(-25.0, -30.0, -40.0);
-    glVertex3f(-25.0, 20.0, -40.0);
-    glVertex3f(-55.0, 20.0, -30.0);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3f(0.0,0.0,1.0);//dpn aliyen
-    glVertex3f(-25.0, -30.0, -40.0);
-    glVertex3f(-20.0, -30.0, -50.0);
-    glVertex3f(-21.0, 20.0, -46.0);
-    glVertex3f(-25.0, 20.0, -40.0);
-    glEnd();
-
-    glBegin(GL_POLYGON);//blkng
-    glVertex3f(-60.0, -30.0, -60.0);
-    glVertex3f(-25.0, -30.0, -70.0);
-    glVertex3f(-25.0, 100.0, -70.0);
-    glVertex3f(-60.0, 100.0, -60.0);
-    glEnd();
-
-    glBegin(GL_POLYGON);//skiri
-    glVertex3f(-55.0, -30.0, -30.0);
-    glVertex3f(-60.0, -30.0, -60.0);
-    glVertex3f(-60.0, 100.0, -60.0);
-    glVertex3f(-55.0, 100.0, -30.0);
-    glEnd();
-
-    glColor3f(0.0,1.0,1.0);
-    glBegin(GL_POLYGON);//kanan
-    glVertex3f(-20.0, -30.0, -50.0);
-    glVertex3f(-25.0, 100.0, -40.0);
-    glVertex3f(-25.0, 100.0, -70.0);
-    glVertex3f(-25.0, -30.0, -70.0);
-    glEnd();
-
-    glColor3f(1.0,0,1.0);
-    glBegin(GL_POLYGON);
-    glVertex3f(-21.0, 20.0, -46.0);
-    glVertex3f(-25.0, 20.0, -40.0);
-    glVertex3f(-30.0, 100.0, -35.0);
-    glVertex3f(-25.0, 100.0, -40.0);
-    glEnd();
-
-    glColor3f(1.0,1.0,0.0);
-    glBegin(GL_POLYGON);
-    glVertex3f(-55.0, 20.0, -30.0);
-    glVertex3f(-25.0, 20.0, -40.0);
-    glVertex3f(-30.0, 100.0, -35.0);
-    glVertex3f(-55.0, 100.0, -30.0);
-    glEnd();
+    glTranslatef(25,0,50);
+    gedungkiri();
     glutSwapBuffers();
 
 }
@@ -213,7 +242,7 @@ void ukuran(int lebar, int tinggi){
     glClearColor(1.0, 1.0, 1.0, 1.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(70.0, lebar / tinggi, 5.0, 500.0);
+    gluPerspective(75.0, lebar / tinggi, 5.0, 500.0);
     glTranslatef(0.0, -5.0, -150.0);
     glMatrixMode(GL_MODELVIEW);
 }
