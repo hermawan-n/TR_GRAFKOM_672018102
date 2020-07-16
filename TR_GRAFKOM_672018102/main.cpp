@@ -241,7 +241,6 @@ void gedungkiri(void){
 
 void gedungkanan(void){
 
-
     glBegin(GL_POLYGON);//atap
     glColor3f(1.0,0.0,0.0);
     glVertex3f(-30.0, 95.0, -38.0);
@@ -432,6 +431,39 @@ void gedungkanan(void){
     glVertex3f(-60.0, -10.0, -60.0);
     glVertex3f(-59.9, -10.0, -59.0);
     glEnd();
+}
+
+void gedungtengah (void){
+    glBegin(GL_POLYGON);//belakang
+    glColor3f(1.0,0.0,1.0);
+    glVertex3f(-22.5, -30.0, -60.0);
+    glVertex3f(-22.5, -10.0, -60.0);
+    glVertex3f(-20.0, -10.0, -60.7);
+    glVertex3f(-20.0, -30.0, -60.7);
+    glEnd();
+    glBegin(GL_POLYGON);//belakang
+    glColor3f(1.0,0.0,1.0);
+    glVertex3f(-23.5, -30.0, -74.0);
+    glVertex3f(-23.5, -10.0, -74.0);
+    glVertex3f(-20.0, -10.0, -60.7);
+    glVertex3f(-20.0, -30.0, -60.7);
+    glEnd();
+    glBegin(GL_POLYGON);//belakang
+    glColor3f(1.0,0.0,1.0);
+    glVertex3f(-23.5, -30.0, -74.0);
+    glVertex3f(-23.5, -10.0, -74.0);
+    glVertex3f(-20.0, -10.0, -60.7);
+    glVertex3f(-20.0, -30.0, -60.7);
+    glEnd();
+
+
+    /*glBegin(GL_POLYGON);//kiri
+    glColor3f(1.0,0.0,1.0);
+    glVertex3f(-21.0, -30.0, -55.0);
+    glVertex3f(-21.2, 0.0, -55.0);
+    glVertex3f(35.0, 0.0, -55.0);
+    glVertex3f(35.0, -30.0, -55.0);
+    glEnd();*/
 
 }
 
@@ -442,7 +474,7 @@ void tampil (){
     glRotatef(xrot, 1.0f, 0.0f, 0.0f);
     glRotatef(yrot, 0.0f, 1.0f, 0.0f);
 
-    //=================================bawah=====================
+
     glBegin(GL_POLYGON);
     glColor3f(0.0,1.0,0.0);
     glVertex3f(-70.0,-30.0,50.0);
@@ -450,10 +482,11 @@ void tampil (){
     glVertex3f(70.0,-30.0,-80.0);
     glVertex3f(-70.0,-30.0,-80.0);
     glEnd();
+    gedungtengah();
     gedungkiri();
-    glTranslated(-20,0,-40);
-    glRotatef(180,0,1,0);
-    glRotatef(60,0,1,0);
+    gedungtengah();
+    glTranslated(-15,0,-50);
+    glRotatef(235,0,1,0);
     gedungkanan();
     glutSwapBuffers();
 
@@ -546,10 +579,10 @@ void mouseMotion(int x, int y){
 
 void ukuran(int lebar, int tinggi){
     if (tinggi == 0) tinggi = 1;
-    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glClearColor(0.0, 0.0, 0.0, 0.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(100.0, lebar / tinggi, 5.0, 500.0);
+    gluPerspective(50.0, lebar / tinggi, 5.0, 500.0);
     glTranslatef(0.0, -5.0, -150.0);
     glMatrixMode(GL_MODELVIEW);
 }
