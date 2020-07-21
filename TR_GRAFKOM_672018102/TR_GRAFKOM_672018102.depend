@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1595359124 source:c:\users\nugiek\documents\github\tr_grafkom_672018102\tr_grafkom_672018102\main.cpp
+1595375576 source:c:\users\nugiek\documents\github\tr_grafkom_672018102\tr_grafkom_672018102\main.cpp
 	<windows.h>
 	<gl/glut.h>
 	<cmath>
@@ -208,7 +208,7 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1595358762 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+976692172 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
