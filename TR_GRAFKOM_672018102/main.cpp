@@ -22,7 +22,6 @@ bool mouseDown = false;
 int is_depth;
 
 GLUquadricObj *qobj;
-
 int main (int argc, char **argv){
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -996,7 +995,421 @@ void gedungkanan(void){
     glEnd();
 }
 
+void manusia (){
+    glPushMatrix();//mata kanan
+    glTranslatef(0.17,1.1,0.75);
+    glRotatef(-45,0,0,1);
+    glScalef(0.9,0.7,0.7);
+    glColor3f(1.0,1.0,1.0);
+    gluSphere(gluNewQuadric(),0.3,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//mata kiri
+    glTranslatef(-0.17,1.1,0.75);
+    glRotatef(45,0,0,1);
+    glScalef(0.9,0.7,0.7);
+    glColor3f(1.0,1.0,1.0);
+    gluSphere(gluNewQuadric(),0.3,100,100);
+    glPopMatrix();
+
+    glPushMatrix(); //kaki kiri
+    glColor3ub(50,40,60);
+    glTranslatef(0.3,-0.5,0);
+    glRotatef(-90.0,1,0,0);
+    glScalef(0.8,0.8,0.8);
+    gluCylinder(gluNewQuadric(),0.5,0.5,0.5,30,6);
+    glPopMatrix();
+
+    glPushMatrix();//kaki kanan
+    glColor3ub(50,40,60);
+    glTranslatef(-0.3,-0.5,0);
+    glRotatef(-90.0,1,0,0);
+    glScalef(0.8,0.8,0.8);
+    gluCylinder(gluNewQuadric(),0.5,0.5,0.5,30,6);
+    glPopMatrix();
+
+    glPushMatrix();//tangan kiri
+    glColor3ub(255,90,0);
+    glTranslatef(-0.82,0,0.1);
+    glRotatef(90,0,1,0);
+    glRotatef(-50,1,0,0);
+    gluCylinder(gluNewQuadric(),0.15,0.15,0.48,30,6);
+    glPopMatrix();
+
+    glPushMatrix();//tangan kanan
+    glTranslatef(0.82,0,0.1);
+    glRotatef(90,0,1,0);
+    glRotatef(-130,1,0,0);
+    gluCylinder(gluNewQuadric(),0.15,0.15,0.48,30,6);
+    glPopMatrix();
+
+    glPushMatrix();//tangan kiri
+    glColor3f(0.0,0.0,0.0);
+    glColor3ub(0,185,0);
+    glTranslatef(.82,0,0.1);
+    glScalef(0.4,0.3,0.3);
+    gluSphere(gluNewQuadric(),0.4,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//tangan kanan
+    glColor3ub(0,185,0);
+    glTranslatef(-0.82,0,0.1);
+    glScalef(0.4,0.3,0.3);
+    gluSphere(gluNewQuadric(),0.4,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//mulut
+    glTranslatef(0,0.78,0.74);
+    glScalef(0.4,0.4,0.1);
+    glColor3f(0.0,0.0,0.0);
+    gluSphere(gluNewQuadric(),0.4,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//gigi
+    glColor3f(1.0,1.0,1.0);
+    glTranslatef(-0.08,0.72,0.76);
+    glTranslatef(0.055,0,0.005 );
+    glutSolidCube(0.035);
+    glTranslatef(0.055,0,0 );
+    glutSolidCube(0.035);
+    glPopMatrix();
+
+    glPushMatrix();//alis kiri
+    glTranslatef(-0.3,1.5,0.97);;
+    glRotatef(90,0,1,0);
+    glRotatef(45,1,0,0);
+    glColor3f(0.0,0.0,0.0);
+    gluCylinder(gluNewQuadric(),0.05,0.01,0.3,4,6);
+    glPopMatrix();
+
+    glPushMatrix();//alis kanan
+    glTranslatef(0.3,1.5,0.97);
+    glRotatef(270,0,1,0);
+    glRotatef(45,1,0,0);
+    gluCylinder(gluNewQuadric(),0.05,0.01,0.3,4,6);
+    glPopMatrix();
+
+    glPushMatrix();//leher
+    glColor3f(0.0,1.0,0.0);
+    glTranslatef(0,.5,0);
+    glScalef(0.59,0.59,0.59);
+    glRotatef(90.0,1,0,0);
+    glutSolidTorus(0.1,1.0,20,20);
+    glPopMatrix();
+
+    glPushMatrix();//hepala
+    glColor3ub(255,222,173);
+    glTranslatef(0,1.2,0);
+    glScalef(0.9 ,0.9,0.9 );
+    glColor3f(1.0,0.8,0.6);
+    gluSphere(gluNewQuadric(),1,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//sangul
+    glColor3f(0.0,0.0,0.0);
+    glTranslatef(0,2.2,0);
+    glScalef(0.9,0.9,0.9);
+    gluSphere(gluNewQuadric(),0.18,100,100);
+    glPopMatrix() ;
+
+    glPushMatrix();//kaki kiri
+    glColor3f(1.0,1.0,1.0);
+    glTranslatef(-0.3,-0.5,0);
+    glScalef(1.5,0.3,1.5);
+
+    gluSphere(gluNewQuadric(),0.3,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//kaki kanan
+    glColor3f(1.0,1.0,1.0);
+    glTranslatef(0.3,-.5,0);
+    glScalef(1.5,0.3,1.5);
+    gluSphere(gluNewQuadric(),0.3,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//jaket bawah
+    glColor3f(0.0,0.0,0.0);
+    glColor3ub(255,90,0);
+    glTranslatef(0,-0.2,0);
+    glScalef(1,0.7,1);
+    glRotatef(90.0,1,0,0);
+    gluDisk(gluNewQuadric(),0,0.8,30,30);
+    glPopMatrix();
+
+    glPushMatrix();//jaket atas
+    glColor3ub(255,90,0);
+    glTranslatef(0,0.5,0);
+    glScalef(1,.7,1);
+    glRotatef(90.0,1,0,0);
+    gluCylinder(gluNewQuadric(),0.6,0.8,1,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//pupil mata kiri
+    glColor3f(0.0,0.0,0.0);
+    glTranslatef(-.17,1.1,.88);
+    glScalef(0.9,0.9,0.9);
+    gluSphere(gluNewQuadric(),0.1,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//pupil mata kanan
+    glTranslatef(0.17,1.1,0.88);
+    glScalef(0.9,0.9,0.9);
+    gluSphere(gluNewQuadric(),0.1,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//benik atas
+    glColor3f(1.0,1.0,1.0);
+    glTranslatef(-.1,.4,.85);
+    glScalef(1.9,1.9,1.9);
+    gluSphere(gluNewQuadric(),0.04,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//benik tengah
+    glTranslatef(-0.1,0.15,0.98);
+    glScalef(1.9,1.9,1.9);
+    gluSphere(gluNewQuadric(),0.04,100,100);
+    glPopMatrix();
+
+    glPushMatrix();//benik bawah
+    glColor3f(1.0,1.0,1.0);
+    glTranslatef(-0.1,-0.1,0.92);
+    glScalef(1.9,1.9,1.9);
+    gluSphere(gluNewQuadric(),0.04,100,100);
+    glPopMatrix();
+}
 void gedungtengah (void){
+    glBegin(GL_LINES);//depan
+    glColor3f(0.0,0.0,0.0);
+    glVertex3f(-10.0, -10.0, -50.0);
+    glVertex3f(25.0, -10.0, -50.0);
+    glVertex3f(25.0, -10.0, -55.0);
+    glVertex3f(-10.0, -10.0, -55.0);
+    glVertex3f(-10.0, -10.0, -50.0);
+    glVertex3f(25.0, -10.0, -50.0);
+    glVertex3f(25.0, -15.0, -46.0);
+    glVertex3f(-10.0, -15.0, -46.0);
+    glVertex3f(-10.0, -30.0, -50.0);
+    glVertex3f(25.0, -30.0, -50.0);
+    glVertex3f(25.0, -15.0, -46.0);
+    glVertex3f(25.0, -30.0, -50.0);
+    glVertex3f(-10.0, -9.9, -50.0);
+    glVertex3f(-10.0, -9.9, -55.0);
+    glVertex3f(-9.0, -9.9, -50.0);
+    glVertex3f(-9.0, -9.9, -55.0);
+    glVertex3f(-8.0, -9.9, -50.0);
+    glVertex3f(-8.0, -9.9, -55.0);
+    glVertex3f(-7.0, -9.9, -50.0);
+    glVertex3f(-7.0, -9.9, -55.0);
+    glVertex3f(-6.0, -9.9, -50.0);
+    glVertex3f(-6.0, -9.9, -55.0);
+    glVertex3f(-5.0, -9.9, -50.0);
+    glVertex3f(-5.0, -9.9, -55.0);
+    glVertex3f(-4.0, -9.9, -50.0);
+    glVertex3f(-4.0, -9.9, -55.0);
+    glVertex3f(-3.0, -9.9, -50.0);
+    glVertex3f(-3.0, -9.9, -55.0);
+    glVertex3f(-2.0, -9.9, -50.0);
+    glVertex3f(-2.0, -9.9, -55.0);
+    glVertex3f(-1.0, -9.9, -50.0);
+    glVertex3f(-1.0, -9.9, -55.0);
+    glVertex3f(0.0, -9.9, -50.0);
+    glVertex3f(0.0, -9.9, -55.0);
+    glVertex3f(1.0, -9.9, -50.0);
+    glVertex3f(1.0, -9.9, -55.0);
+    glVertex3f(2.0, -9.9, -50.0);
+    glVertex3f(2.0, -9.9, -55.0);
+    glVertex3f(3.0, -9.9, -50.0);
+    glVertex3f(3.0, -9.9, -55.0);
+    glVertex3f(4.0, -9.9, -50.0);
+    glVertex3f(4.0, -9.9, -55.0);
+    glVertex3f(5.0, -9.9, -50.0);
+    glVertex3f(5.0, -9.9, -55.0);
+    glVertex3f(6.0, -9.9, -50.0);
+    glVertex3f(6.0, -9.9, -55.0);
+    glVertex3f(7.0, -9.9, -50.0);
+    glVertex3f(7.0, -9.9, -55.0);
+    glVertex3f(8.0, -9.9, -50.0);
+    glVertex3f(8.0, -9.9, -55.0);
+    glVertex3f(9.0, -9.9, -50.0);
+    glVertex3f(9.0, -9.9, -55.0);
+    glVertex3f(10.0, -9.9, -50.0);
+    glVertex3f(10.0, -9.9, -55.0);
+    glVertex3f(11.0, -9.9, -50.0);
+    glVertex3f(11.0, -9.9, -55.0);
+    glVertex3f(12.0, -9.9, -50.0);
+    glVertex3f(12.0, -9.9, -55.0);
+    glVertex3f(13.0, -9.9, -50.0);
+    glVertex3f(13.0, -9.9, -55.0);
+    glVertex3f(14.0, -9.9, -50.0);
+    glVertex3f(14.0, -9.9, -55.0);
+    glVertex3f(15.0, -9.9, -50.0);
+    glVertex3f(15.0, -9.9, -55.0);
+    glVertex3f(16.0, -9.9, -50.0);
+    glVertex3f(16.0, -9.9, -55.0);
+    glVertex3f(17.0, -9.9, -50.0);
+    glVertex3f(17.0, -9.9, -55.0);
+    glVertex3f(18.0, -9.9, -50.0);
+    glVertex3f(18.0, -9.9, -55.0);
+    glVertex3f(19.0, -9.9, -50.0);
+    glVertex3f(19.0, -9.9, -55.0);
+    glVertex3f(20.0, -9.9, -50.0);
+    glVertex3f(20.0, -9.9, -55.0);
+    glVertex3f(21.0, -9.9, -50.0);
+    glVertex3f(21.0, -9.9, -55.0);
+    glVertex3f(22.0, -9.9, -50.0);
+    glVertex3f(22.0, -9.9, -55.0);
+    glVertex3f(23.0, -9.9, -50.0);
+    glVertex3f(23.0, -9.9, -55.0);
+    glVertex3f(24.0, -9.9, -50.0);
+    glVertex3f(24.0, -9.9, -55.0);
+    glVertex3f(25.0, -9.9, -50.0);
+    glVertex3f(25.0, -9.9, -55.0);
+    glVertex3f(25.0, -9.9, -50.0);
+    glVertex3f(25.0, -15.1, -46.0);
+    glVertex3f(24.0, -10.0, -50.0);
+    glVertex3f(24.0, -15.0, -46.0);
+    glVertex3f(23.0, -10.0, -50.0);
+    glVertex3f(23.0, -15.0, -46.0);
+    glVertex3f(22.0, -10.0, -50.0);
+    glVertex3f(22.0, -15.0, -46.0);
+    glVertex3f(21.0, -10.0, -50.0);
+    glVertex3f(21.0, -15.0, -46.0);
+    glVertex3f(20.0, -10.0, -50.0);
+    glVertex3f(20.0, -15.0, -46.0);
+    glVertex3f(19.0, -10.0, -50.0);
+    glVertex3f(19.0, -15.0, -46.0);
+    glVertex3f(18.0, -10.0, -50.0);
+    glVertex3f(18.0, -15.0, -46.0);
+    glVertex3f(17.0, -10.0, -50.0);
+    glVertex3f(17.0, -15.0, -46.0);
+    glVertex3f(16.0, -10.0, -50.0);
+    glVertex3f(16.0, -15.0, -46.0);
+    glVertex3f(15.0, -10.0, -50.0);
+    glVertex3f(15.0, -15.0, -46.0);
+    glVertex3f(14.0, -10.0, -50.0);
+    glVertex3f(14.0, -15.0, -46.0);
+    glVertex3f(13.0, -10.0, -50.0);
+    glVertex3f(13.0, -15.0, -46.0);
+    glVertex3f(12.0, -10.0, -50.0);
+    glVertex3f(12.0, -15.0, -46.0);
+    glVertex3f(11.0, -10.0, -50.0);
+    glVertex3f(11.0, -15.0, -46.0);
+    glVertex3f(10.0, -10.0, -50.0);
+    glVertex3f(10.0, -15.0, -46.0);
+    glVertex3f(9.0, -10.0, -50.0);
+    glVertex3f(9.0, -15.0, -46.0);
+    glVertex3f(8.0, -10.0, -50.0);
+    glVertex3f(8.0, -15.0, -46.0);
+    glVertex3f(7.0, -10.0, -50.0);
+    glVertex3f(7.0, -15.0, -46.0);
+    glVertex3f(6.0, -10.0, -50.0);
+    glVertex3f(6.0, -15.0, -46.0);
+    glVertex3f(5.0, -10.0, -50.0);
+    glVertex3f(5.0, -15.0, -46.0);
+    glVertex3f(4.0, -10.0, -50.0);
+    glVertex3f(4.0, -15.0, -46.0);
+    glVertex3f(3.0, -10.0, -50.0);
+    glVertex3f(3.0, -15.0, -46.0);
+    glVertex3f(2.0, -10.0, -50.0);
+    glVertex3f(2.0, -15.0, -46.0);
+    glVertex3f(1.0, -10.0, -50.0);
+    glVertex3f(1.0, -15.0, -46.0);
+    glVertex3f(0.0, -10.0, -50.0);
+    glVertex3f(0.0, -15.0, -46.0);
+    glVertex3f(-1.0, -10.0, -50.0);
+    glVertex3f(-1.0, -15.0, -46.0);
+    glVertex3f(-2.0, -10.0, -50.0);
+    glVertex3f(-2.0, -15.0, -46.0);
+    glVertex3f(-3.0, -10.0, -50.0);
+    glVertex3f(-3.0, -15.0, -46.0);
+    glVertex3f(-4.0, -10.0, -50.0);
+    glVertex3f(-4.0, -15.0, -46.0);
+    glVertex3f(-5.0, -10.0, -50.0);
+    glVertex3f(-5.0, -15.0, -46.0);
+    glVertex3f(-6.0, -10.0, -50.0);
+    glVertex3f(-6.0, -15.0, -46.0);
+    glVertex3f(-7.0, -10.0, -50.0);
+    glVertex3f(-7.0, -15.0, -46.0);
+    glVertex3f(-8.0, -10.0, -50.0);
+    glVertex3f(-8.0, -15.0, -46.0);
+    glVertex3f(-9.0, -10.0, -50.0);
+    glVertex3f(-9.0, -15.0, -46.0);
+    glVertex3f(-10.0, -10.0, -50.0);
+    glVertex3f(-10.0, -15.0, -46.0);
+    glVertex3f(25.0, -30.1, -50.0);
+    glVertex3f(25.0, -15.1, -46.0);
+    glVertex3f(24.0, -30.1, -50.0);
+    glVertex3f(24.0, -15.1, -46.0);
+    glVertex3f(23.0, -30.1, -50.0);
+    glVertex3f(23.0, -15.1, -46.0);
+    glVertex3f(22.0, -30.1, -50.0);
+    glVertex3f(22.0, -15.1, -46.0);
+    glVertex3f(21.0, -30.1, -50.0);
+    glVertex3f(21.0, -15.1, -46.0);
+    glVertex3f(20.0, -30.1, -50.0);
+    glVertex3f(20.0, -15.1, -46.0);
+    glVertex3f(19.0, -30.1, -50.0);
+    glVertex3f(19.0, -15.1, -46.0);
+    glVertex3f(18.0, -30.1, -50.0);
+    glVertex3f(18.0, -15.1, -46.0);
+    glVertex3f(17.0, -30.1, -50.0);
+    glVertex3f(17.0, -15.1, -46.0);
+    glVertex3f(16.0, -30.1, -50.0);
+    glVertex3f(16.0, -15.1, -46.0);
+    glVertex3f(15.0, -30.1, -50.0);
+    glVertex3f(15.0, -15.1, -46.0);
+    glVertex3f(14.0, -30.1, -50.0);
+    glVertex3f(14.0, -15.1, -46.0);
+    glVertex3f(13.0, -30.1, -50.0);
+    glVertex3f(13.0, -15.1, -46.0);
+    glVertex3f(12.0, -30.1, -50.0);
+    glVertex3f(12.0, -15.1, -46.0);
+    glVertex3f(11.0, -30.1, -50.0);
+    glVertex3f(11.0, -15.1, -46.0);
+    glVertex3f(10.0, -30.1, -50.0);
+    glVertex3f(10.0, -15.1, -46.0);
+    glVertex3f(9.0, -30.1, -50.0);
+    glVertex3f(9.0, -15.1, -46.0);
+    glVertex3f(8.0, -30.1, -50.0);
+    glVertex3f(8.0, -15.1, -46.0);
+    glVertex3f(7.0, -30.1, -50.0);
+    glVertex3f(7.0, -15.1, -46.0);
+    glVertex3f(6.0, -30.1, -50.0);
+    glVertex3f(6.0, -15.1, -46.0);
+    glVertex3f(5.0, -30.1, -50.0);
+    glVertex3f(5.0, -15.1, -46.0);
+    glVertex3f(4.0, -30.1, -50.0);
+    glVertex3f(4.0, -15.1, -46.0);
+    glVertex3f(3.0, -30.1, -50.0);
+    glVertex3f(3.0, -15.1, -46.0);
+    glVertex3f(2.0, -30.1, -50.0);
+    glVertex3f(2.0, -15.1, -46.0);
+    glVertex3f(1.0, -30.1, -50.0);
+    glVertex3f(1.0, -15.1, -46.0);
+    glVertex3f(0.0, -30.1, -50.0);
+    glVertex3f(0.0, -15.1, -46.0);
+    glVertex3f(-1.0, -30.1, -50.0);
+    glVertex3f(-1.0, -15.1, -46.0);
+    glVertex3f(-2.0, -30.1, -50.0);
+    glVertex3f(-2.0, -15.1, -46.0);
+    glVertex3f(-3.0, -30.1, -50.0);
+    glVertex3f(-3.0, -15.1, -46.0);
+    glVertex3f(-4.0, -30.1, -50.0);
+    glVertex3f(-4.0, -15.1, -46.0);
+    glVertex3f(-5.0, -30.1, -50.0);
+    glVertex3f(-5.0, -15.1, -46.0);
+    glVertex3f(-6.0, -30.1, -50.0);
+    glVertex3f(-6.0, -15.1, -46.0);
+    glVertex3f(-7.0, -30.1, -50.0);
+    glVertex3f(-7.0, -15.1, -46.0);
+    glVertex3f(-8.0, -30.1, -50.0);
+    glVertex3f(-8.0, -15.1, -46.0);
+    glVertex3f(-9.0, -30.1, -50.0);
+    glVertex3f(-9.0, -15.1, -46.0);
+    glVertex3f(-10.0, -30.1, -50.0);
+    glVertex3f(-10.0, -15.1, -46.0);
+    glEnd();
+
     glBegin(GL_POLYGON);//depan kiri
     glColor3f(1.0,0.0,1.0);
     glVertex3f(-20.0, -30.0, -50.0);
@@ -1015,10 +1428,56 @@ void gedungtengah (void){
 
     glBegin(GL_POLYGON);
     glColor3f(1.0,0.0,0);//dpn tngh
-    glVertex3f(-10.0, -30.0, -55.0);
-    glVertex3f(25.0, -30.0, -55.0);
+    glVertex3f(-10.0, -10.0, -55.0);
+    glVertex3f(25.0, -10.0, -55.0);
     glVertex3f(25.0, 0.0, -55.0);
     glVertex3f(-10.0, 0.0, -55.0);
+    glEnd();
+
+    glPushMatrix();
+    glTranslated(10 ,-25, -60);
+    glRotated(180,0,1,0);
+    glScalef(5,5,5);
+    glRotatef(180, 0, 1, 0);
+    manusia();
+    glPopMatrix();
+
+    glBegin(GL_POLYGON);
+    glColor4f(1,1,1,0.5);//segitiga depan
+    glVertex3f(-10.0, -10.0, -50.0);
+    glVertex3f(25.0, -10.0, -50.0);
+    glVertex3f(25.0, -10.0, -55.0);
+    glVertex3f(-10.0, -10.0, -55.0);
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor4f(1,1,1,0.5);//segitiga depan
+    glVertex3f(-10.0, -10.0, -50.0);
+    glVertex3f(25.0, -10.0, -50.0);
+    glVertex3f(25.0, -15.0, -46.0);
+    glVertex3f(-10.0, -15.0, -46.0);
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor4f(1,1,1,0.5);//segitiga depan
+    glVertex3f(-10.0, -30.0, -50.0);
+    glVertex3f(25.0, -30.0, -50.0);
+    glVertex3f(25.0, -15.0, -46.0);
+    glVertex3f(-10.0, -15.0, -46.0);
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor4f(1,1,1,0.5);//segitiga depan penutup kiri
+    glVertex3f(-10.0, -10.0, -55.0);
+    glVertex3f(-10.0, -10.0, -50.0);
+    glVertex3f(-10.0, -15.0, -46.0);
+    glVertex3f(-10.0, -30.0, -50.0);
+    glVertex3f(-10.0, -30.0, -55.0);
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor4f(1,1,1,0.5);//segitiga depan penutup kanan
+    glVertex3f(25.0, -10.0, -55.0);
+    glVertex3f(25.0, -10.0, -50.0);
+    glVertex3f(25.0, -15.0, -46.0);
+    glVertex3f(25.0, -30.0, -50.0);
+    glVertex3f(25.0, -30.0, -55.0);
     glEnd();
 
     glBegin(GL_POLYGON);//blkng kiri
@@ -2573,188 +3032,7 @@ void awan (){
     glutPostRedisplay();
 }
 
-void manusia (){
-    glPushMatrix();//mata kanan
-    glTranslatef(0.17,1.1,0.75);
-    glRotatef(-45,0,0,1);
-    glScalef(0.9,0.7,0.7);
-    glColor3f(1.0,1.0,1.0);
-    gluSphere(gluNewQuadric(),0.3,100,100);
-    glPopMatrix();
 
-    glPushMatrix();//mata kiri
-    glTranslatef(-0.17,1.1,0.75);
-    glRotatef(45,0,0,1);
-    glScalef(0.9,0.7,0.7);
-    glColor3f(1.0,1.0,1.0);
-    gluSphere(gluNewQuadric(),0.3,100,100);
-    glPopMatrix();
-
-    glPushMatrix(); //kaki kiri
-    glColor3ub(50,40,60);
-    glTranslatef(0.3,-0.5,0);
-    glRotatef(-90.0,1,0,0);
-    glScalef(0.8,0.8,0.8);
-    gluCylinder(gluNewQuadric(),0.5,0.5,0.5,30,6);
-    glPopMatrix();
-
-    glPushMatrix();//kaki kanan
-    glColor3ub(50,40,60);
-    glTranslatef(-0.3,-0.5,0);
-    glRotatef(-90.0,1,0,0);
-    glScalef(0.8,0.8,0.8);
-    gluCylinder(gluNewQuadric(),0.5,0.5,0.5,30,6);
-    glPopMatrix();
-
-    glPushMatrix();//tangan kiri
-    glColor3ub(255,90,0);
-    glTranslatef(-0.82,0,0.1);
-    glRotatef(90,0,1,0);
-    glRotatef(-50,1,0,0);
-    gluCylinder(gluNewQuadric(),0.15,0.15,0.48,30,6);
-    glPopMatrix();
-
-    glPushMatrix();//tangan kanan
-    glTranslatef(0.82,0,0.1);
-    glRotatef(90,0,1,0);
-    glRotatef(-130,1,0,0);
-    gluCylinder(gluNewQuadric(),0.15,0.15,0.48,30,6);
-    glPopMatrix();
-
-    glPushMatrix();//tangan kiri
-    glColor3f(0.0,0.0,0.0);
-    glColor3ub(0,185,0);
-    glTranslatef(.82,0,0.1);
-    glScalef(0.4,0.3,0.3);
-    gluSphere(gluNewQuadric(),0.4,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//tangan kanan
-    glColor3ub(0,185,0);
-    glTranslatef(-0.82,0,0.1);
-    glScalef(0.4,0.3,0.3);
-    gluSphere(gluNewQuadric(),0.4,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//mulut
-    glTranslatef(0,0.78,0.74);
-    glScalef(0.4,0.4,0.1);
-    glColor3f(0.0,0.0,0.0);
-    gluSphere(gluNewQuadric(),0.4,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//gigi
-    glColor3f(1.0,1.0,1.0);
-    glTranslatef(-0.08,0.72,0.76);
-    glTranslatef(0.055,0,0.005 );
-    glutSolidCube(0.035);
-    glTranslatef(0.055,0,0 );
-    glutSolidCube(0.035);
-    glPopMatrix();
-
-    glPushMatrix();//alis kiri
-    glTranslatef(-0.3,1.5,0.97);;
-    glRotatef(90,0,1,0);
-    glRotatef(45,1,0,0);
-    glColor3f(0.0,0.0,0.0);
-    gluCylinder(gluNewQuadric(),0.05,0.01,0.3,4,6);
-    glPopMatrix();
-
-    glPushMatrix();//alis kanan
-    glTranslatef(0.3,1.5,0.97);
-    glRotatef(270,0,1,0);
-    glRotatef(45,1,0,0);
-    gluCylinder(gluNewQuadric(),0.05,0.01,0.3,4,6);
-    glPopMatrix();
-
-    glPushMatrix();//leher
-    glColor3f(0.0,1.0,0.0);
-    glTranslatef(0,.5,0);
-    glScalef(0.59,0.59,0.59);
-    glRotatef(90.0,1,0,0);
-    glutSolidTorus(0.1,1.0,20,20);
-    glPopMatrix();
-
-    glPushMatrix();//hepala
-    glColor3ub(255,222,173);
-    glTranslatef(0,1.2,0);
-    glScalef(0.9 ,0.9,0.9 );
-    glColor3f(1.0,0.8,0.6);
-    gluSphere(gluNewQuadric(),1,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//sangul
-    glColor3f(0.0,0.0,0.0);
-    glTranslatef(0,2.2,0);
-    glScalef(0.9,0.9,0.9);
-    gluSphere(gluNewQuadric(),0.18,100,100);
-    glPopMatrix() ;
-
-    glPushMatrix();//kaki kiri
-    glColor3f(1.0,1.0,1.0);
-    glTranslatef(-0.3,-0.5,0);
-    glScalef(1.5,0.3,1.5);
-
-    gluSphere(gluNewQuadric(),0.3,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//kaki kanan
-    glColor3f(1.0,1.0,1.0);
-    glTranslatef(0.3,-.5,0);
-    glScalef(1.5,0.3,1.5);
-    gluSphere(gluNewQuadric(),0.3,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//jaket bawah
-    glColor3f(0.0,0.0,0.0);
-    glColor3ub(255,90,0);
-    glTranslatef(0,-0.2,0);
-    glScalef(1,0.7,1);
-    glRotatef(90.0,1,0,0);
-    gluDisk(gluNewQuadric(),0,0.8,30,30);
-    glPopMatrix();
-
-    glPushMatrix();//jaket atas
-    glColor3ub(255,90,0);
-    glTranslatef(0,0.5,0);
-    glScalef(1,.7,1);
-    glRotatef(90.0,1,0,0);
-    gluCylinder(gluNewQuadric(),0.6,0.8,1,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//pupil mata kiri
-    glColor3f(0.0,0.0,0.0);
-    glTranslatef(-.17,1.1,.88);
-    glScalef(0.9,0.9,0.9);
-    gluSphere(gluNewQuadric(),0.1,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//pupil mata kanan
-    glTranslatef(0.17,1.1,0.88);
-    glScalef(0.9,0.9,0.9);
-    gluSphere(gluNewQuadric(),0.1,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//benik atas
-    glColor3f(1.0,1.0,1.0);
-    glTranslatef(-.1,.4,.85);
-    glScalef(1.9,1.9,1.9);
-    gluSphere(gluNewQuadric(),0.04,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//benik tengah
-    glTranslatef(-0.1,0.15,0.98);
-    glScalef(1.9,1.9,1.9);
-    gluSphere(gluNewQuadric(),0.04,100,100);
-    glPopMatrix();
-
-    glPushMatrix();//benik bawah
-    glColor3f(1.0,1.0,1.0);
-    glTranslatef(-0.1,-0.1,0.92);
-    glScalef(1.9,1.9,1.9);
-    gluSphere(gluNewQuadric(),0.04,100,100);
-    glPopMatrix();
-}
 
 void lift(){
 
@@ -2906,17 +3184,12 @@ void tampil (){
     glPopMatrix();
 
     glPushMatrix();
-    glTranslated(0 ,5, -35);
+    glTranslated(0 ,3, -35);
     glScalef(5,5,5);
     manusia();
     glPopMatrix();
 
-    glPushMatrix();
-    glTranslated(0 ,5, -60);
-    glScalef(5,5,5);
-    glRotatef(180, 0, 1, 0);
-    manusia();
-    glPopMatrix();
+
 
     glutSwapBuffers();
 }
@@ -2991,7 +3264,7 @@ void ukuran(int lebar, int tinggi){
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(70.0, lebar / tinggi, 5.0, 500.0);
+    gluPerspective(50.0, lebar / tinggi, 5.0, 500.0);
     glTranslatef(0.0, -30.0, -150.0);
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
