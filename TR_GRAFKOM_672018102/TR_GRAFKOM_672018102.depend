@@ -208,7 +208,7 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-976692172 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+1595358762 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -219,7 +219,7 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1595342904 source:c:\users\gemblong\documents\github\tr_grafkom_672018102\tr_grafkom_672018102\main.cpp
+1595364783 source:c:\users\gemblong\documents\github\tr_grafkom_672018102\tr_grafkom_672018102\main.cpp
 	<windows.h>
 	<gl/glut.h>
 	<cmath>
