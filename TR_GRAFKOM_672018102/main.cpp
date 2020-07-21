@@ -92,7 +92,7 @@ void gedungkiri(void){
     glVertex3f(-30.0, 95.0, -38.0);
     glVertex3f(-50.0, 98.0, -31.5);
     glEnd();
-    /*glBegin(GL_POLYGON);//dpn tengah
+    glBegin(GL_POLYGON);//dpn tengah
     glColor3f(1.0,1.5,0.0);
     glVertex3f(-55.0, 20.0, -30.0);
     glVertex3f(-25.0, 20.0, -40.0);
@@ -105,7 +105,7 @@ void gedungkiri(void){
     glVertex3f(-28.0, -30.0, -39.6);
     glVertex3f(-25.0, 20.0, -40.0);
     glVertex3f(-55.0, 20.0, -30.0);
-    glEnd();*/
+    glEnd();
 
     glBegin(GL_POLYGON);//depan atas weird kanan
     glColor3f(1.0,0,1.0);
