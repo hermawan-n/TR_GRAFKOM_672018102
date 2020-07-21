@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1594638388 source:c:\users\nugiek\documents\github\tr_grafkom_672018102\tr_grafkom_672018102\main.cpp
+1595357808 source:c:\users\nugiek\documents\github\tr_grafkom_672018102\tr_grafkom_672018102\main.cpp
 	<windows.h>
 	<gl/glut.h>
+	<cmath>
 
 1301111162 c:\program files (x86)\codeblocks\mingw\include\windows.h
 	<winresrc.h>
@@ -207,8 +208,10 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1426324528 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
-	"freeglut_std.h"
+976692172 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
 
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
 
