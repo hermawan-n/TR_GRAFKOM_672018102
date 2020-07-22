@@ -42,9 +42,11 @@ int main (int argc, char **argv){
 void init(void){
     glMatrixMode(GL_PROJECTION);
     glEnable(GL_DEPTH_TEST);
-    //glEnable(GL_LIGHTING);
-    //glEnable(GL_COLOR_MATERIAL);
-    //glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_COLOR_MATERIAL);
+    glEnable(GL_LIGHT0);
+    GLfloat lightpos[] = {20, 20, 20, 1};
+    glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
     is_depth=1;
@@ -245,7 +247,6 @@ void manusia(){
     gluSphere(gluNewQuadric(),0.04,100,100);
     glPopMatrix();
 }
-
 
 void gedungkiri(void){
 
@@ -3041,7 +3042,7 @@ void lift(){
     glEnd();
 
     glPushMatrix();
-    glTranslated(-40 ,3, -60);
+    glTranslated(-40 ,4, -55);
     glScalef(5,5,5);
     manusia();
     glPopMatrix();
@@ -3081,7 +3082,6 @@ void lift(){
 }
 
 void snowman(){
-
     glPushMatrix();
     glColor3f(1.0f, 1.0f, 1.0f);
     glTranslatef(0.0f, 0.75f, 0.0f);
