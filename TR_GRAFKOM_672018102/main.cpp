@@ -42,11 +42,11 @@ int main (int argc, char **argv){
 void init(void){
     glMatrixMode(GL_PROJECTION);
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHT0);
-    GLfloat lightpos[] = {20, 20, 20, 1};
-    glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
+    //glEnable(GL_LIGHTING);
+    //glEnable(GL_COLOR_MATERIAL);
+    //glEnable(GL_LIGHT0);
+    //GLfloat lightpos[] = {20, 20, 20, 1};
+    //glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
     is_depth=1;

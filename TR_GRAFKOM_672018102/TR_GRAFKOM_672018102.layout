@@ -4,13 +4,14 @@
 	<ActiveTarget name="Debug" />
 	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="26110" topLine="714" />
+			<Cursor1 position="55180" topLine="24" />
 		</Cursor>
 		<Folding>
 			<Collapse line="25" />
 			<Collapse line="41" />
-			<Collapse line="53" />
-			<Collapse line="791" />
+			<Collapse line="55" />
+			<Collapse line="3001" />
+			<Collapse line="3105" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
